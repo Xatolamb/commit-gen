@@ -16,9 +16,6 @@ echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
 size=$((days*24*60))
 git config --local user.email "xatolamb@gmail.com"
 git config --local user.name "xatolamb"
-git remote rm origin
-git remote add origin https://github.com/Xatolamb/commit.git
-git push -u origin main
 git commit --amend --allow-empty --no-edit --date "$(date -d "-$i minutes")"
 git commit -am "${arr[$rand]} (at ${d})"
 
