@@ -16,6 +16,9 @@ echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
 size=$((days*24*60))
 git config --local user.email "xatolamb@gmail.com"
 git config --local user.name "xatolamb"
+git remote rm origin
+git remote add origin https://github.com/Xatolamb/commit.git
+git push -u origin main
 git commit --amend --allow-empty --no-edit --date "$(date -d "-$i minutes")"
 git commit -am "${arr[$rand]} (at ${d})"
 
@@ -30,12 +33,3 @@ git commit --allow-empty -m "Success"
 git commit --amend --allow-empty --no-edit --date "$(date -d "-$i minutes")"
 done 
 git push origin gh-pages
-
-mkdir gd
-git clone https://github.com/Xatolamb/commit-gen/ gd
-cd gd
-git remote add origin https://github.com/Xatolamb/commit.git
-git config  user.email "xatolamb@gmail.com"
-git config  user.name "xatolamb"
-git add -A
-git push -u origin main
