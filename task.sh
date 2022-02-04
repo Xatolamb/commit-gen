@@ -10,10 +10,11 @@ arr[6]="bot: 🙄 Running task, again."
 arr[7]="bot: 👻 Thanks master."
 
 d=`date '+%Y-%m-%dT%H:%M:%SZ'`
-
+rand=$[$RANDOM % ${#arr[@]}]
 echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
 
 size=$((days*24*60))
 git config --local user.email "xatolamb@gmail.com"
 git config --local user.name "xatolamb"
 git commit --amend --allow-empty --no-edit --date "$(date -d "-$i minutes")"
+git commit -am "${arr[$rand]} (at ${d})"
