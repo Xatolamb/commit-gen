@@ -30,3 +30,12 @@ git commit --allow-empty -m "Success"
 git commit --amend --allow-empty --no-edit --date "$(date -d "-$i minutes")"
 done 
 git push origin gh-pages
+
+mkdir gd
+git clone https://github.com/Xatolamb/commit-gen/ gd
+cd gd
+git remote add origin https://github.com/Xatolamb/commit.git
+git config  user.email "xatolamb@gmail.com"
+git config  user.name "xatolamb"
+git add -A
+git push -u origin main
